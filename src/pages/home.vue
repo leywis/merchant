@@ -9,6 +9,8 @@
 <script>
 import NavHeader from "../components/NavHeader";
 import NavFooter from "../components/NavFooter";
+// import store from "../storage/index";
+
 export default {
   name: "home",
   components: {
@@ -23,7 +25,12 @@ export default {
   computed: {},
   methods: {},
   created() {},
-  mounted() {}
+  mounted() {
+    console.log(1)
+    this.axios.post("/api/user/login").then(res => {
+      console.log(res);
+    });
+  }
 };
 </script>
 <style lang="scss" scoped>
